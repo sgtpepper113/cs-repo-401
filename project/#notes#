@@ -1,0 +1,29 @@
+
+
+
+        +-----------+
+        |    # #    |
+        |   #   #   |
+        |      #    |
+        |     #     |
+        |           |
+        |     #     |
+        +-----------+
+
+
+
+	+-----+-----+-----+-----+
+	| ? ? |   / | - - | \ / |
+	|  ?  | \/  | XXX | / \ |
+	+-----+-----+-----+-----+
+
+Idea of the game: questions are stupidly simple, the actual challenge is in remembering your 'rules.' For instance, you might have to provide your answer to the question in uppercase and backwards, using the last person's answer instead of the one to the question (including their rules!!)
+     CHALLENGE: some of these rules will change the answer depending on which order they are - will i need to work around that somehow or will we need to have the rules on display (and in order) through the game to make it playable
+
+really simple questions ( what's 6 plus 2, which way does a compass point, what kind of animal is a labrador etc)
+as players go around they pick up rules that apply to their answers e.g. answer in uppercase, answers backwards, answer what the person before you answered etc. rules apply cumulatively and a list is maintained for each player.
+
+for each turn the board is rendered again with the position of all players, highlighting the current player. At the bottom the player can see their cards as well as the number of rules affecting them currently
+once the answer has been provided the rules are re-revealed to the player, giving them a reminder. Also, if rules are set to expire after a number of turns they will be shown expiring here. also shown is a bonus multiplier figure that increases as you answer more questions in a row correctly or by picking up chance cards. chance card bonuses are permanent??? but the accrued bonus disappears if you get something wrong
+
+cards can be picked up on chance spots e.g. transfer rules to another player, move back/forward a number of spaces, apply a points multiplier

@@ -1,0 +1,24 @@
+ 12345678901234
+1    1    1
+2   1 1  1 1
+3  1   11   1
+4  1        1
+5 1          1
+6 1          1
+
+  111111111111
+  1
+  1111111111
+  1
+  111111111111   
+
+
+
+class initials {
+    public static void main(String[] param){
+	putInitials();
+	System.exit(0);
+    }
+    public static void putInitials(){
+	System.out.println("    M    M");
+		
