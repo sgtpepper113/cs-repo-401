@@ -20,7 +20,7 @@ class initials {
 	System.out.println(" EEEEEEEEEE");
 	System.out.println(" E");
 	System.out.println(" EEEEEEEEEEEE");
-	String ANSI_CLS = "\u001b[2J\n";
+	String ANSI_CLS = "\u001b[2J";
 	System.out.print(ANSI_CLS);
     }
 }

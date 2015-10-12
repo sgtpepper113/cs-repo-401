@@ -1,6 +1,7 @@
 import java.util.Random;
-
-
+import java.util.ArrayList;
+import org.apache.commons.lang3.StringUtils;
+import com.googlecode.lanterna;
 class boardgame {
     public static void main(String[] param){
 	final String CHANCE = "+-----+\n| ? ? |\n|  ?  |\n+-----+";
@@ -11,6 +12,8 @@ class boardgame {
 	final String GOSTRT = "+-----+\n| GO  |\n| --> |\n+-----+";
 	char[][][] buf = initBuffer();
 	Integer[] board = initBoard();
+	Integer[][][] players = initPlayers();
+	List<String> answers = new ArrayList<String>();
 	for (int i=0;i < board.length; i++){
 	    String square = NORMAL;
 	    switch(board[i]) {
@@ -37,6 +40,23 @@ class boardgame {
 	}
 	printBuffer(buf, 0);
 	System.exit(0);
+    }
+    public static String runRules(Integer[][][] players,
+				  Integer playerNumber,
+				  List<String> answers,
+				  String correctAnswer)
+    {
+	for (int i=0;i < players[playerNumber-1][0].length;i++){
+	    switch(players[playerNumber-1][0][i]{
+		case 0:
+		    break;
+		case 1: //Previous answer
+		    correctAnswer = answers.get(answers.size() - 1);
+		    break;
+		case 2:
+		    correctAnswer =
+		}
+	}
     }
     public static Integer[] initBoard(){
 	/**
@@ -91,6 +111,11 @@ class boardgame {
 					    Integer startRow,
 					    Integer startCol)
     {
+	/**  
+	     Inserts a string into the buffer at the specified row and column
+
+
+	 **/
 	char[][] buf = buffer[bufferId].clone(); //make a local copy of the buffer to work on
 	try{
 	    String[] rows = input.split("\n");
@@ -107,6 +132,25 @@ class boardgame {
 	    return buffer;
 	}
 	    
+    }
+    public static Integer[][] initPlayers(){
+	final Integer PLAYERCOUNT = 4;
+	final Integer PLAYERPARAMCOUNT = 2;
+	final Integer MAXRULES = 5;
+	// set up some keywords representing indexes on the arrays
+	final Integer IDXRULES = 0; //index for the rules array
+	final Integer IDXSCORE = 1; //index for the score array
+	final Integer IDXSCOREVAL = 0; //index for the actual score value in the score array
+	final Integer IDXSCOREMLT = 1; //index for the score multiplier in the score array
+        Integer players = new Integer[PLAYERCOUNT][PLAYERPARAMCOUNT][MAXRULES];
+	for (int p=0;p < PLAYERCOUNT;p++){
+	    players[p][IDXSCORE][IDXSCOREVAL] = 0;
+	    players[p][IDXSCORE][IDXSCOREMLT] = 1;
+	    for (int r=0; r < MAXRULES;r++){
+		players[p][IDXRULES][r] = 0;
+	    }
+	}
+	return players;
     }
     public static char[][][] initBuffer(){
 	/**
